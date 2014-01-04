@@ -1,0 +1,25 @@
+%table.table.table-bordered
+  %thead
+    %tr
+      %th Name
+      %th Artist
+      %th Year
+      %th Genre
+      %th Actions
+  %tbody
+    - if @albums.present?
+      - @albums.each do |album|
+        %tr{'data-id' => "#{album.id}"}
+          = render 'album_table_row', album: album
+
+    %tr.hide
+      = form_for :album, url: albums_path, remote: true, html: {id: 'create_album_form'} do |f|
+        %td= f.text_field :name, class: 'input-small'
+        %td= f.text_field :artist, class: 'input-small'
+        %td= f.text_field :year, class: 'input-small'
+        %td= f.text_field :genre, class: 'input-small'
+        %td
+          = f.submit 'Save', class: 'btn'
+          %span
+          = link_to 'Cancel', 'javascript:void(0)', class: 'btn cancel_btn'
+= link_to 'New Album', 'javascript:void(0)', class: 'btn', id: 'create_btn'

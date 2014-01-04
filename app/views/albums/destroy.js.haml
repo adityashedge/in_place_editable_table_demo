@@ -1,0 +1,4 @@
+- if @albums.present?
+  $('#album_table').html("#{escape_javascript(render 'albums')}")
+$('.flash_message').html('#{escape_javascript(render 'flash_message')}');
+$('.alert').delay(5000).fadeOut("slow", function () { $(this).remove();})

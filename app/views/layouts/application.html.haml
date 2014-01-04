@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title In Place Editable Table
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application" #, "data-turbolinks-track" => false
+    = csrf_meta_tags
+  %body
+    .header
+      .flash_message
+        = render 'flash_message'
+    .container
+      = yield

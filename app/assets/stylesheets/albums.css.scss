@@ -1,0 +1,13 @@
+// Place all the styles related to the Albums controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#album_table th, #album_table td{
+  width: 20%;  
+}
+#album_table td{
+  line-height: 30px;
+}
+#album_table input[type='text']{
+  margin: 0px;
+  width: 90%;
+}

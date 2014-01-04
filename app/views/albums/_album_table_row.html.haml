@@ -1,0 +1,8 @@
+%td= album.name
+%td= album.artist
+%td= album.year
+%td= album.genre
+%td
+  = link_to 'Edit', 'javascript:void(0)', class: 'btn edit_btn'
+  %span
+  = link_to 'Delete', album_path(album), method: 'delete', data: {confirm: 'Are you sure?'}, remote: true, class: 'btn'
