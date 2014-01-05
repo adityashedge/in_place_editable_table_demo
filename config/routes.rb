@@ -1,10 +1,6 @@
 InPlaceEditableTableDemo::Application.routes.draw do
 
-  resources :albums, only: [:index, :destroy, :update] do
-    collection do
-      post :create
-    end
-  end
+  resources :albums, only: [:index, :destroy, :update, :create]
   root 'albums#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
